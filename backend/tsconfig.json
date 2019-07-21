@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es6",
+        "noImplicitAny": false,
+        "moduleResolution": "node",
+        "outDir": "../backendDist",
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "sourceMap": true,
+        "baseUrl": "./",
+        "paths": {
+            "shared/*": ["../shared/*"]
+        }
+    },
+    "files": [
+        "main.ts"
+    ]
+}

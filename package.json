@@ -2,12 +2,19 @@
   "name": "spot-taken",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "front": "ng serve",
+    "back": "npm run back-debug",
+    "build-prod": "node ./node_modules/@angular/cli/bin/ng build --prod && npm run back-compile",
+    "start-prod": "node backendDist/main.js",
+    "back-compile": "rimraf backendDist && tsc -p backend/tsconfig.json",
+    "back-compile-watch": "rimraf backendDist && npm run back-compile-watch-only",
+    "back-compile-watch-only": "tsc -p tsconfig.json -w",
+    "back-debug-only": "./node_modules/.bin/nodemon --inspect backendDist/main.js",
+    "back-debug-brk-only": "./node_modules/.bin/nodemon --inspect-brk backendDist/main.js",
+    "back-prod": "npm run back-compile && npm run start-prod",
+    "back-debug": "npm run back-compile && concurrently -k -n \"tsc,back\" -c \"magenta,green\" \"npm:back-compile-watch-only\" \"npm:back-debug-only\"",
+    "back-debug-brk": "npm run back-compile && concurrently -k -n \"back-tsc,back\" -c \"magenta,green\" \"npm:back-compile-watch-only\" \"npm:back-debug-brk-only\"",
+    "start": "npm run build-prod && npm run start-prod"
   },
   "private": true,
   "dependencies": {
@@ -28,7 +35,11 @@
     "moment": "^2.24.0",
     "rxjs": "~6.4.0",
     "tslib": "^1.9.0",
-    "zone.js": "~0.9.1"
+    "zone.js": "~0.9.1",
+    "express": "^4.16.3",
+    "body-parser": "^1.18.3",
+    "compression": "1.7.1",
+    "source-map-support": "^0.5.12"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.800.0",
@@ -49,6 +60,15 @@
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
-    "typescript": "~3.4.3"
+    "typescript": "~3.4.3",
+    "rimraf": "^2.6.3",
+    "concurrently": "^4.0.1",
+    "nodemon": "^1.18.11"
+  },
+  "nodemonConfig": {
+    "watch": [
+      "backendDist"
+    ],
+    "delay": "2000"
   }
 }

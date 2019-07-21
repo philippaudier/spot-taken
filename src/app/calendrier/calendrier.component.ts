@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { Moment } from 'moment';
 import * as moment from 'moment';
 import { MatCalendar, MatCalendarCellCssClasses } from '@angular/material/datepicker';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-calendrier',
@@ -14,7 +15,7 @@ export class CalendrierComponent implements OnInit, AfterViewInit {
   @ViewChild('calendar', { static: false })
   matCalendar: MatCalendar<Moment>;
 
-  constructor() { }
+  constructor(public httpClient: HttpClient) { }
 
   ngAfterViewInit(): void {
     console.log(this.matCalendar);
@@ -47,6 +48,13 @@ export class CalendrierComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
+    this.httpClient.get('/api/testwebservice')
+      .toPromise()
+      .then((result) => {
+        console.log(result);
+      }, (error) => {
+        console.error(error);
+      })
   }
 
   onSelect(selectedDate: Moment) {
