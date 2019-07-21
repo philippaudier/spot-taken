@@ -4,7 +4,7 @@ import * as express from "express";
 import * as path from "path";
 require("source-map-support").install(); //to get stack traces pointing to ts files
 
-const port = 8081;
+const port = process.env.PORT || 8081;
 
 function init() {
     configureExpressApp()
