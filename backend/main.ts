@@ -2,14 +2,29 @@ import * as bodyParser from "body-parser";
 import * as compression from "compression";
 import * as express from "express";
 import * as path from "path";
+import { Pool, Client } from "pg";
+
 require("source-map-support").install(); //to get stack traces pointing to ts files
-
+const connectionString = process.env.DATABASE_URL;
 const port = process.env.PORT || 8081;
+let databaseClient;
 
-function init() {
+async function init() {
     configureExpressApp()
+    await connectToDb();
     console.log("starting server");
     console.log("--=== Server started ===--")
+}
+
+async function connectToDb() {
+    databaseClient = new Client({
+        connectionString
+    })
+    await databaseClient.connect()
+    databaseClient.query('SELECT NOW()', (err, res) => {
+        console.log(err, res)
+        databaseClient.end()
+    })
 }
 
 function configureExpressApp() {
