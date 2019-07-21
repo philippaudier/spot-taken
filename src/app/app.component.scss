@@ -1,19 +1,25 @@
-$primary-color: #1976D2;
-$accent-color: #2196F3;
+@import '../material-theme';
 
-.main-container {
+:host {
     display: flex;
     flex-direction: column;
-    .components {
-        justify-content: center;
+    height: 100vh;
+
+    .content {
+        flex-grow: 1;
+        .components {
+            justify-content: center;
+            
+        }
     }
     .bottom-menu {
         height: 56px;;
         display: flex;
         justify-content: space-between;
-        background-color: $accent-color;
+        background-color: mat-color($spot-taken-primary);
         padding-inline-start: 0px;
         margin: 0px; 
+        text-align: center;
         a {
             display: flex;
             text-decoration: none;
@@ -23,6 +29,7 @@ $accent-color: #2196F3;
             flex-direction: column;
             justify-content: center;
             padding: 0px 12px 0px 12px;
+            position: relative;
             &:focus {
                 opacity: 1;
                 border-bottom: 2px solid #FFFFFF;

@@ -1,20 +1,12 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <div class="main-container">
-    <div class="content">
-      <router-outlet class="components">
-      </router-outlet>
-    </div>
-    <div>
-        <ul class="bottom-menu">
-          
-          <a routerLink="/calendrier"><i class="material-icons">calendar_today</i>Calendrier</a>
-          <a routerLink="/inventaire"><i class="material-icons">list</i>Inventaire</a>
-          <a routerLink="/reservations"><i class="material-icons">event</i>Réserver</a>
-          <a routerLink="/livre"><i class="material-icons">comment</i>Livre d'or</a>
-          <a routerLink="/infos"><i class="material-icons">info</i>Infos</a>
-        </ul>
-    </div>
+<div class="content">
+  <router-outlet class="components">
+  </router-outlet>
 </div>
-
-
+<ul class="bottom-menu">
+  <a routerLink="/calendrier" mat-ripple><i class="material-icons">calendar_today</i>Calendrier</a>
+  <a routerLink="/inventaire" mat-ripple><i class="material-icons">list</i>Inventaire</a>
+  <a routerLink="/reservations" mat-ripple><i class="material-icons">event</i>Réserver</a>
+  <a routerLink="/livre" mat-ripple><i class="material-icons">comment</i>Livre d'or</a>
+  <a routerLink="/infos" mat-ripple><i class="material-icons">info</i>Infos</a>
+</ul>
