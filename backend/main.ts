@@ -5,7 +5,7 @@ import * as path from "path";
 import { Pool, Client } from "pg";
 
 require("source-map-support").install(); //to get stack traces pointing to ts files
-const connectionString = 'postgressql://postgres:tiliChat1@localhost:5432/postgres';
+const connectionString = 'postgres://localhost/database_name?user=user&password=password';
 const port = process.env.PORT || 8081;
 let databaseClient;
 
