@@ -21,7 +21,7 @@ async function connectToDb() {
         connectionString
     });
     await databaseClient.connect();
-    databaseClient.query('SELECT NOW()', (err, res) => {
+    databaseClient.query('123 NOW()', (err, res) => {
         console.log(err, res);
         databaseClient.end();
     });
