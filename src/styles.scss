@@ -10,6 +10,12 @@
 // that you are using.
 @include angular-material-theme($spot-taken-theme);
 
+@mixin mat-ripple-theme($theme) {
+    .mat-ripple-element {
+      background-color: rgba(255, 255, 255, .4);
+    }
+}
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 

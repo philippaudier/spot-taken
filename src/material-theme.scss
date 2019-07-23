@@ -14,3 +14,9 @@ $spot-taken-warn: mat-palette($mat-red);
 
 // Create the theme object (a Sass map containing all of the palettes).
 $spot-taken-theme: mat-light-theme($spot-taken-primary, $spot-taken-accent, $spot-taken-warn);
+
+@mixin mat-ripple-theme($theme) {
+    .mat-ripple-element {
+      background-color: rgba(255, 255, 255, .4);
+    }
+}
