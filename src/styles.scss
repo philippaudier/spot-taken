@@ -16,13 +16,6 @@
     }
 }
 
-@media(max-width:768px) {
-    a {
-        color: transparent;
-
-    }
-}
-
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
@@ -30,6 +23,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     background: mat-color($spot-taken-warn);
 }
 
-.selected-period {
+.today-cell {
     background: mat-color($spot-taken-primary);
 }

@@ -20,9 +20,3 @@ $spot-taken-theme: mat-light-theme($spot-taken-primary, $spot-taken-accent, $spo
         background-color: rgba(255, 255, 255, .4);
     }
 }
-
-@media(max-width:768px) {
-    a {
-        color: transparent;
-    }
-}

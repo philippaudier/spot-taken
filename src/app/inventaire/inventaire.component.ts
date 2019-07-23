@@ -1,31 +1,39 @@
 import {Component} from '@angular/core';
+import {MatTableDataSource} from '@angular/material/table';
 
-export interface inventaire {
+export interface PeriodicElement {
   name: string;
-  number: number;
-  state: string;
+  position: number;
+  weight: number;
+  symbol: string;
 }
 
-const ELEMENT_DATA: inventaire[] = [
-  {name: 'Verre', number: 8, state: 'B'},
-  {name: 'Chaise', number: 4, state: 'N'},
-  {name: 'Couteau', number: 8, state: 'B'},
-  {name: 'Bol', number: 2, state: 'B'},
-  {name: 'Balais', number: 2, state: 'U'},
-  {name: 'Porte savon', number: 1, state: 'B'},
-  {name: 'Parapluie', number: 1, state: 'B'},
-  {name: 'Poubelle', number: 2, state: 'N'},
+const ELEMENT_DATA: PeriodicElement[] = [
+  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
+  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
+  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
+  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
+  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
+  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
+  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
+  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
+  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
+  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
 ];
 
 /**
- * @title Basic use of `<table mat-table>`
+ * @title Table with filtering
  */
 @Component({
   selector: 'app-inventaire',
   styleUrls: ['inventaire.component.scss'],
   templateUrl: 'inventaire.component.html',
 })
-export class TableBasic {
-  displayedColumns: string[] = ['name', 'number', 'state'];
-  dataSource = ELEMENT_DATA;
+export class TableFiltering {
+  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  dataSource = new MatTableDataSource(ELEMENT_DATA);
+
+  applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
 }

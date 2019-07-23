@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CalendrierComponent } from './calendrier/calendrier.component';
-import { TableBasic } from './inventaire/inventaire.component';
+import { TableFiltering } from './inventaire/inventaire.component';
 import { ReservationsComponent } from './reservations/reservations.component';
 import { LivreComponent } from './livre/livre.component';
 import { InfosComponent } from './infos/infos.component';
@@ -20,11 +20,11 @@ import { MatTableModule } from '@angular/material/table';
   declarations: [
     AppComponent,
     CalendrierComponent,
-    TableBasic,
+    TableFiltering,
     ReservationsComponent,
     LivreComponent,
     InfosComponent,
-    TableBasic
+    TableFiltering
   ],
   imports: [
     BrowserModule,

@@ -41,10 +41,10 @@ export class CalendrierComponent implements OnInit, AfterViewInit {
     if (date.isBefore(threeDaysAgo) || date.isAfter(inThreeDays)) {
       return;
     } else if (date.isSame(today, 'day')) {
-      return 'selected-period';
+      return 'today-cell';
     } else {
       return 'unavailable-date-cell';
-    }  
+    }
   }
 
   ngOnInit() {
