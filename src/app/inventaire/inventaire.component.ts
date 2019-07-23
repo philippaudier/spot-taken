@@ -7,6 +7,7 @@ import {MatTableDataSource} from '@angular/material/table';
   templateUrl: './inventaire.component.html',
   styleUrls: ['./inventaire.component.scss']
 })
+
 export class InventaireComponent implements OnInit {
 
   constructor() { }
@@ -21,8 +22,8 @@ export class InventaireComponent implements OnInit {
  */
 @Component({
   selector: 'table-pagination-example',
-  styleUrls: ['table-pagination-example.scss'],
-  templateUrl: 'table-pagination-example.html',
+  styleUrls: ['inventaire.component.scss'],
+  templateUrl: 'inventaire.component.html',
 })
 export class TablePaginationExample implements OnInit {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
