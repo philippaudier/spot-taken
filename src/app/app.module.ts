@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CalendrierComponent } from './calendrier/calendrier.component';
-import { InventaireComponent } from './inventaire/inventaire.component';
+import { InventaireComponent, TablePagination } from './inventaire/inventaire.component';
 import { ReservationsComponent } from './reservations/reservations.component';
 import { LivreComponent } from './livre/livre.component';
 import { InfosComponent } from './infos/infos.component';
@@ -22,7 +22,8 @@ import { MatTableModule } from '@angular/material/table';
     InventaireComponent,
     ReservationsComponent,
     LivreComponent,
-    InfosComponent
+    InfosComponent,
+    TablePagination
   ],
   imports: [
     BrowserModule,

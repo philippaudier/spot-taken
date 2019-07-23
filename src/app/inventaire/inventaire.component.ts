@@ -25,7 +25,7 @@ export class InventaireComponent implements OnInit {
   styleUrls: ['inventaire.component.scss'],
   templateUrl: 'inventaire.component.html',
 })
-export class TablePaginationExample implements OnInit {
+export class TablePagination implements OnInit {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
 
