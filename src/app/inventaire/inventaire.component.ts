@@ -21,7 +21,7 @@ const ELEMENT_DATA: inventaire[] = [
  * @title Basic use of `<table mat-table>`
  */
 @Component({
-  selector: 'app-component',
+  selector: 'app-inventaire',
   styleUrls: ['inventaire.component.scss'],
   templateUrl: 'inventaire.component.html',
 })
