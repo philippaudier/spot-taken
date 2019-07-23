@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CalendrierComponent } from './calendrier/calendrier.component';
-import { InventaireComponent, TablePagination } from './inventaire/inventaire.component';
+import { InventaireComponent, TableBasic } from './inventaire/inventaire.component';
 import { ReservationsComponent } from './reservations/reservations.component';
 import { LivreComponent } from './livre/livre.component';
 import { InfosComponent } from './infos/infos.component';
@@ -15,6 +15,7 @@ import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import { MatRippleModule } from '@angular/material/core';
 import { MatTableModule } from '@angular/material/table';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,7 @@ import { MatTableModule } from '@angular/material/table';
     ReservationsComponent,
     LivreComponent,
     InfosComponent,
-    TablePagination
+    TableBasic
   ],
   imports: [
     BrowserModule,
