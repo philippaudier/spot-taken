@@ -17,6 +17,6 @@ $spot-taken-theme: mat-light-theme($spot-taken-primary, $spot-taken-accent, $spo
 
 @mixin mat-ripple-theme($theme) {
     .mat-ripple-element {
-      background-color: rgba(255, 255, 255, .4);
+        background-color: rgba(255, 255, 255, .4);
     }
 }
