@@ -1,19 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-
-@Component({
-  selector: 'app-inventaire',
-  templateUrl: './inventaire.component.html',
-  styleUrls: ['./inventaire.component.scss']
-})
-
-export class InventaireComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-}
+import {Component} from '@angular/core';
 
 export interface PeriodicElement {
   name: string;
@@ -39,7 +24,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
  * @title Basic use of `<table mat-table>`
  */
 @Component({
-  selector: 'table-basic-example',
+  selector: 'table-basic',
   styleUrls: ['inventaire.component.scss'],
   templateUrl: 'inventaire.component.html',
 })
