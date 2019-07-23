@@ -21,7 +21,7 @@ export class InventaireComponent implements OnInit {
  */
 @Component({
   selector: 'table-pagination-example',
-  styleUrls: ['table-pagination-example.css'],
+  styleUrls: ['table-pagination-example.scss'],
   templateUrl: 'table-pagination-example.html',
 })
 export class TablePaginationExample implements OnInit {
