@@ -6,7 +6,7 @@ import { Pool, Client } from "pg";
 
 require("source-map-support").install(); //to get stack traces pointing to ts files
 const connectionString = process.env.DATABASE_URL;
-const port = process.env.PORT || 'postgres://localhost:5432';
+const port = process.env.PORT || 8081;
 let databaseClient;
 
 async function init() {
