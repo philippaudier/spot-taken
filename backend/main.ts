@@ -10,21 +10,21 @@ const port = process.env.PORT || 8081;
 let databaseClient;
 
 async function init() {
-    configureExpressApp()
+    configureExpressApp();
     await connectToDb();
     console.log("starting server");
-    console.log("--=== Server started ===--")
+    console.log("--=== Server started ===--");
 }
 
 async function connectToDb() {
     databaseClient = new Client({
         connectionString
-    })
-    await databaseClient.connect()
+    });
+    await databaseClient.connect();
     databaseClient.query('SELECT NOW()', (err, res) => {
-        console.log(err, res)
-        databaseClient.end()
-    })
+        console.log(err, res);
+        databaseClient.end();
+    });
 }
 
 function configureExpressApp() {
@@ -49,20 +49,20 @@ function exposeProductionAngularApp(app) {
     // For all GET requests, send back index.html
     // so that PathLocationStrategy can be used
     //only for routes not matched by previous middlewares, so order is important
-    console.log(path.join(__dirname, "./../dist/spot-taken/index.html"))
+    console.log(path.join(__dirname, "./../dist/spot-taken/index.html"));
     app.get("/*", (req, res) => {
-        console.log('serving index.html')
-        res.sendFile(path.join(__dirname, "./../dist/spot-taken/index.html"))
+        console.log('serving index.html');
+        res.sendFile(path.join(__dirname, "./../dist/spot-taken/index.html"));
     }
     );
 }
 
 function exposeFakeAPI(app) {
     app.get("/api/testwebservice", (req, res) => {
-        console.log('serving /api/testwebservice')
+        console.log('serving /api/testwebservice');
         res.json({
             message: 'bravo'
-        })
+        });
     }
     );
 }
