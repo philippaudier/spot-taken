@@ -22,7 +22,7 @@ async function connectToDb() {
     });
     await databaseClient.connect();
     databaseClient.query('SELECT NOW()', (err, res) => {
-        console.log(err, res);
+        
         databaseClient.end();
     });
 }
