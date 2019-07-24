@@ -43,7 +43,6 @@ export class DataTableDataSource extends DataSource<DataTableItem> {
   data: DataTableItem[] = EXAMPLE_DATA;
   paginator: MatPaginator;
   sort: MatSort;
-  filter: string;
 
   constructor() {
     super();

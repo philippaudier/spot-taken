@@ -13,13 +13,14 @@
         }
     }
     .bottom-menu {
-        height: 56px;;
+        min-height: 56px;;
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-between;
         background-color: mat-color($spot-taken-primary);
         padding-inline-start: 0px;
         margin: 0px; 
         text-align: center;
+        position: initial;
         a {
             display: flex;
             text-decoration: none;
