@@ -26,3 +26,25 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .today-cell {
     background: mat-color($spot-taken-primary);
 }
+
+.mat-calendar-header {
+    background-color: mat-color($spot-taken-primary);
+    color: #FFFFFF;
+    
+}
+
+.mat-calendar-arrow {
+    border-color: #FFFFFF;
+}
+
+.mat-button-wrapper {
+    font-size: 24px;
+    color: FFFFFF;
+    opacity: 70%;
+}
+
+
+//.mat-card-content {
+//    border: 1px solid black;
+//    margin-left: 0px;
+//}

@@ -1,33 +1,38 @@
-<mat-accordion>
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          INFORMATIONS
-        </mat-panel-title>
-        <mat-panel-description>
-          Type your name and age
-        </mat-panel-description>
-      </mat-expansion-panel-header>
-  
-      <mat-form-field>
-        <input matInput placeholder="First name">
-      </mat-form-field>
-  
-      <mat-form-field>
-        <input matInput placeholder="Age">
-      </mat-form-field>
+<mat-accordion class="accordion">
+    
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      
+      <mat-panel-title>
+        INFORMATIONS
+      </mat-panel-title>
+      
+      <mat-panel-description>
+        Détail du logement
+      </mat-panel-description>
+      
+    </mat-expansion-panel-header>
+    <p>I'm visible because I am open</p>
     </mat-expansion-panel>
+    
     <mat-expansion-panel (opened)="panelOpenState = true"
                          (closed)="panelOpenState = false">
       <mat-expansion-panel-header>
+        
         <mat-panel-title>
           PRIX
         </mat-panel-title>
+        
         <mat-panel-description>
-          Currently I am {{panelOpenState ? 'open' : 'closed'}}
+          Prix indicatifs
         </mat-panel-description>
+      
       </mat-expansion-panel-header>
-      <p>I'm visible because I am open</p>
+      <p> 1 Nuit : 20€ <tr></tr>
+          1 Week-end : 30€ <tr></tr>
+          1 Semaine : 100€ 
+      </p>
     </mat-expansion-panel>
-  </mat-accordion>
+    
+</mat-accordion>
   

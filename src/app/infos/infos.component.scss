@@ -1,12 +1,14 @@
 .card {
     display: flex;
     flex-direction: column;
+    overflow: auto;
     .button {
         background-color: transparent;
         border: none;
     }
     .photo {
         border-radius: 0;
+        
     }
     p {
         text-align: justify;
