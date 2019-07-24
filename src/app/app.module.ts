@@ -60,7 +60,7 @@ import { MapComponent } from './map/map.component';
     MatListModule,
     MatDividerModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyDweQk0aGOH4cH0bkMq8EyhdNlJdOYMn8w'
+      apiKey: ''
     })
   ],
   providers: [],
