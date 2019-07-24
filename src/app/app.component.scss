@@ -7,7 +7,8 @@
 
     .content {
         flex-grow: 1;
-        .components {
+        
+        .component {
             justify-content: center;
             
         }
@@ -20,9 +21,12 @@
         padding-inline-start: 0px;
         margin: 0px; 
         text-align: center;
-        position: initial;
+        bottom: 0;
+        position: relative;
+        position: -webkit-sticky;
+        position: sticky;
+        
         a {
-            display: flex;
             text-decoration: none;
             opacity: 0.76;
             color: white;
@@ -30,7 +34,6 @@
             flex-direction: column;
             justify-content: center;
             padding: 0px 12px 0px 12px;
-            position: relative;
             border-bottom: 1px solid transparent;
             &:focus {
                 opacity: 1;

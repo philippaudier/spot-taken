@@ -1,7 +1,11 @@
 .full-width-table {
   width: 100%;
   overflow: auto;
-  flex-grow: 1;
-  table-layout: fixed;
 }
+
+.data-table {
+  overflow: visible;
+  display: block;
+}
+
 
