@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CalendrierComponent } from './calendrier/calendrier.component';
-import { TableFiltering } from './inventaire/inventaire.component';
+import { InventaireComponent } from './inventaire/inventaire.component';
 import { ReservationsComponent } from './reservations/reservations.component';
 import { LivreComponent } from './livre/livre.component';
 import { InfosComponent } from './infos/infos.component';
@@ -14,17 +14,20 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import { MatRippleModule } from '@angular/material/core';
 import { MatTableModule } from '@angular/material/table';
-
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { DataTableComponent } from './data-table/data-table.component';
+import { MatSortModule } from '@angular/material/sort';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
     AppComponent,
     CalendrierComponent,
-    TableFiltering,
+    InventaireComponent,
     ReservationsComponent,
     LivreComponent,
     InfosComponent,
-    TableFiltering
+    DataTableComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,7 +38,10 @@ import { MatTableModule } from '@angular/material/table';
     MatMomentDateModule,
     MatRippleModule,
     HttpClientModule,
-    MatTableModule
+    MatTableModule,
+    MatFormFieldModule,
+    MatSortModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
