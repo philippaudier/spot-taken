@@ -6,7 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./map.component.scss']
 })
 export class MapComponent {
-  title = 'Passy';
   latitude = 45.92907;
   longitude = 6.716297;
 }

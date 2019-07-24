@@ -1,29 +1,62 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
-import { MatPaginator, MatSort, MatTable } from '@angular/material';
-import { DataTableDataSource, DataTableItem } from './data-table-datasource';
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {MatSort} from '@angular/material/sort';
+import {MatTableDataSource} from '@angular/material/table';
 
+export interface ListeInventaire {
+  item: string;
+  nombre: number;
+  etat: string;
+}
+
+const ELEMENT_DATA: ListeInventaire[] = [
+  {item: 'Chaise', nombre: 4, etat: 'Bon'},
+  {item: 'Bol', nombre: 2, etat: 'Bon'},
+  {item: 'Cuillère', nombre: 6, etat: 'Neuf'},
+  {item: 'Fourchette', nombre: 6, etat: 'Bon'},
+  {item: 'Couteau', nombre: 6, etat: 'Bon'},
+  {item: 'Cuillère soupe', nombre: 3, etat: 'Usé'},
+  {item: 'Verre', nombre: 8, etat: 'Bon'},
+  {item: 'Assiette', nombre: 6, etat: 'Bon'},
+  {item: 'Casserole', nombre: 2, etat: 'Mauvais'},
+  {item: 'Saladier', nombre: 1, etat: 'Neuf'},
+  {item: 'Chaise', nombre: 4, etat: 'Bon'},
+  {item: 'Bol', nombre: 2, etat: 'Bon'},
+  {item: 'Cuillère', nombre: 6, etat: 'Neuf'},
+  {item: 'Fourchette', nombre: 6, etat: 'Bon'},
+  {item: 'Couteau', nombre: 6, etat: 'Bon'},
+  {item: 'Cuillère soupe', nombre: 3, etat: 'Usé'},
+  {item: 'Verre', nombre: 8, etat: 'Bon'},
+  {item: 'Assiette', nombre: 6, etat: 'Bon'},
+  {item: 'Casserole', nombre: 2, etat: 'Mauvais'},
+  {item: 'Saladier', nombre: 1, etat: 'Neuf'},
+  {item: 'Chaise', nombre: 4, etat: 'Bon'},
+  {item: 'Bol', nombre: 2, etat: 'Bon'},
+  {item: 'Cuillère', nombre: 6, etat: 'Neuf'},
+  {item: 'Fourchette', nombre: 6, etat: 'Bon'},
+  {item: 'Couteau', nombre: 6, etat: 'Bon'},
+  {item: 'Cuillère soupe', nombre: 3, etat: 'Usé'},
+  {item: 'Verre', nombre: 8, etat: 'Bon'},
+  {item: 'Assiette', nombre: 6, etat: 'Bon'},
+  {item: 'Casserole', nombre: 2, etat: 'Mauvais'},
+  {item: 'Saladier', nombre: 1, etat: 'Neuf'},
+];
+
+/**
+ * @title Table with sorting
+ */
 @Component({
   selector: 'app-data-table',
-  templateUrl: './data-table.component.html',
-  styleUrls: ['./data-table.component.scss']
+  styleUrls: ['data-table.component.scss'],
+  templateUrl: 'data-table.component.html',
 })
-export class DataTableComponent implements AfterViewInit, OnInit {
-  @ViewChild(MatPaginator, {static: false}) paginator: MatPaginator;
-  @ViewChild(MatSort, {static: false}) sort: MatSort;
-  @ViewChild(MatTable, {static: false}) table: MatTable<DataTableItem>;
-  dataSource: DataTableDataSource;
+export class DataTableComponent implements OnInit {
+  displayedColumns: string[] = ['item', 'nombre', 'etat'];
+  dataSource = new MatTableDataSource(ELEMENT_DATA);
 
-  /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['name', 'number', 'state'];
+  @ViewChild(MatSort, {static: true}) sort: MatSort;
 
   ngOnInit() {
-    this.dataSource = new DataTableDataSource();
-  }
-
-  ngAfterViewInit() {
     this.dataSource.sort = this.sort;
-    this.dataSource.paginator = this.paginator;
-    this.table.dataSource = this.dataSource;
   }
 }
 
