@@ -2,7 +2,7 @@
   "name": "spot-taken",
   "version": "0.0.0",
   "scripts": {
-    "front": "ng serve",
+    "front": "ng serve --open",
     "back": "npm run back-debug",
     "build-prod": "node ./node_modules/@angular/cli/bin/ng build --prod && npm run back-compile",
     "start-prod": "node backendDist/main.js",
@@ -19,6 +19,7 @@
   },
   "private": true,
   "dependencies": {
+    "@agm/core": "^1.0.0-beta.7",
     "@angular/animations": "~8.0.0",
     "@angular/cdk": "^8.0.2",
     "@angular/common": "~8.0.0",

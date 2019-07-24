@@ -21,6 +21,12 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatCardModule } from '@angular/material/card';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { ExpansionPanelComponent } from './expansion-panel/expansion-panel.component';
+import { MatListModule } from '@angular/material/list';
+import { ListInfoComponent } from './list-info/list-info.component';
+import { MatDividerModule } from '@angular/material/divider';
+import { DividerComponent } from './divider/divider.component';
+import { AgmCoreModule } from '@agm/core';
+import { MapComponent } from './map/map.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +38,9 @@ import { ExpansionPanelComponent } from './expansion-panel/expansion-panel.compo
     InfosComponent,
     DataTableComponent,
     ExpansionPanelComponent,
+    ListInfoComponent,
+    DividerComponent,
+    MapComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,6 +57,11 @@ import { ExpansionPanelComponent } from './expansion-panel/expansion-panel.compo
     MatPaginatorModule,
     MatCardModule,
     MatExpansionModule,
+    MatListModule,
+    MatDividerModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDweQk0aGOH4cH0bkMq8EyhdNlJdOYMn8w'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -7,7 +7,7 @@
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
 $spot-taken-primary: mat-palette($mat-blue);
-$spot-taken-accent: mat-palette($mat-blue);
+$spot-taken-accent: mat-palette($mat-indigo);
 
 // The warn palette is optional (defaults to red).
 $spot-taken-warn: mat-palette($mat-red);
