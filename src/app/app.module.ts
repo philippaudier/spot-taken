@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CalendrierComponent } from './calendrier/calendrier.component';
 import { InventaireComponent } from './inventaire/inventaire.component';
-import { ReservationsComponent } from './reservations/reservations.component';
+import { ReservationComponent } from './reservation/reservation.component';
 import { LivreComponent } from './livre/livre.component';
 import { InfosComponent } from './infos/infos.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -18,16 +18,20 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { DataTableComponent } from './data-table/data-table.component';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatCardModule } from '@angular/material/card';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { ExpansionPanelComponent } from './expansion-panel/expansion-panel.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CalendrierComponent,
     InventaireComponent,
-    ReservationsComponent,
+    ReservationComponent,
     LivreComponent,
     InfosComponent,
     DataTableComponent,
+    ExpansionPanelComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,7 +45,9 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatTableModule,
     MatFormFieldModule,
     MatSortModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatCardModule,
+    MatExpansionModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

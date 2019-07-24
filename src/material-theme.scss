@@ -8,6 +8,7 @@
 // hue. Available color palettes: https://material.io/design/color/
 $spot-taken-primary: mat-palette($mat-blue);
 $spot-taken-accent: mat-palette($mat-pink, A200, A100, A400);
+$spot-taken-black: mat-palette($mat-pink, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
 $spot-taken-warn: mat-palette($mat-red);
