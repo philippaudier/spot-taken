@@ -67,7 +67,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatListModule,
     MatDividerModule,
     AgmCoreModule.forRoot({
-      apiKey: ''
+      apiKey: 'AIzaSyA4fcbnnuq3zkLijx31oa5-NhKUfQx2Cy0'
     }),
     MatCarouselModule,
     MatInputModule,

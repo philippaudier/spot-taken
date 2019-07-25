@@ -59,8 +59,8 @@ export class CalendrierComponent implements OnInit, AfterViewInit {
 
   onSelect(selectedDate: Moment) {
 
-    console.log(selectedDate);
-
+    console.log(selectedDate)
 
   }
+
 }

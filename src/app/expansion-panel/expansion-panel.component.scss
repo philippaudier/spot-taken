@@ -1,3 +1,5 @@
+@import './../../material-theme.scss';
+
 h4 {
-    color: #1976D2;
+    color: mat-color($spot-taken-accent);
 }
