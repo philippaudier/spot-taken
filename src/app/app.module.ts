@@ -27,6 +27,9 @@ import { MatDividerModule } from '@angular/material/divider';
 import { DividerComponent } from './divider/divider.component';
 import { AgmCoreModule } from '@agm/core';
 import { MapComponent } from './map/map.component';
+import { MatCarouselModule } from '@ngmodule/material-carousel';
+import { InputCommentComponent } from './component/input-comment/input-comment.component';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -41,6 +44,7 @@ import { MapComponent } from './map/map.component';
     ListInfoComponent,
     DividerComponent,
     MapComponent,
+    InputCommentComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +65,9 @@ import { MapComponent } from './map/map.component';
     MatDividerModule,
     AgmCoreModule.forRoot({
       apiKey: ''
-    })
+    }),
+    MatCarouselModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,8 +1,11 @@
 .wrap-content {
     display: flex;
     flex-wrap: wrap;
-    p {
-        padding-left: 16px;
+    li {
+        flex-grow: 1;
     }
 }
 
+h4 {
+    margin-left: -16px;
+}
