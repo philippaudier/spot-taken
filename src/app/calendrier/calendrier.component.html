@@ -1,7 +1,7 @@
 <div class="calendar-wrapper">
-    <mat-calendar #calendar
+    <mat-calendar #calendar 
         (selectedChange)="onSelect($event)"
         [dateFilter]="dateFilter"
         [dateClass]="dateClassFunction"
-        ></mat-calendar>
+        [(selected)]="selectedDate"></mat-calendar>
 </div>
