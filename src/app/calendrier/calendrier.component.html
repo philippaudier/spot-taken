@@ -3,5 +3,5 @@
         (selectedChange)="onSelect($event)"
         [dateFilter]="dateFilter"
         [dateClass]="dateClassFunction"
-        [(selected)]="selectedChange"></mat-calendar>
+        [(selected)]="onSelect($event)"></mat-calendar>
 </div>
