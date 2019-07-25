@@ -22,9 +22,9 @@ export class CalendrierComponent implements OnInit, AfterViewInit {
   }
 
   dateFilter(date: Moment) {
-    let today = moment();
-    let threeDaysAgo = moment().subtract(3, 'day');
-    let inThreeDays = moment().add(3, 'day');
+    const today = moment();
+    const threeDaysAgo = moment().subtract(3, 'day');
+    const inThreeDays = moment().add(3, 'day');
 
     if (date.isBefore(threeDaysAgo) || date.isAfter(inThreeDays)) {
       return true;
@@ -34,9 +34,9 @@ export class CalendrierComponent implements OnInit, AfterViewInit {
   }
 
   dateClassFunction(date: Moment): MatCalendarCellCssClasses {
-    let today = moment();
-    let threeDaysAgo = moment().subtract(3, 'day');
-    let inThreeDays = moment().add(3, 'day');
+    const today = moment();
+    const threeDaysAgo = moment().subtract(3, 'day');
+    const inThreeDays = moment().add(3, 'day');
 
     if (date.isBefore(threeDaysAgo) || date.isAfter(inThreeDays)) {
       return;
@@ -54,12 +54,12 @@ export class CalendrierComponent implements OnInit, AfterViewInit {
         console.log(result);
       }, (error) => {
         console.error(error);
-      })
+      });
   }
 
   onSelect(selectedDate: Moment) {
 
-    console.log(selectedDate)
+    console.log(selectedDate);
 
   }
 
