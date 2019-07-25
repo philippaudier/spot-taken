@@ -30,6 +30,8 @@ import { MapComponent } from './map/map.component';
 import { MatCarouselModule } from '@ngmodule/material-carousel';
 import { InputCommentComponent } from './component/input-comment/input-comment.component';
 import { MatInputModule } from '@angular/material/input';
+import { FabButtonComponent } from './component/fab-button/fab-button.component';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,8 @@ import { MatInputModule } from '@angular/material/input';
     ListInfoComponent,
     DividerComponent,
     MapComponent,
-    InputCommentComponent
+    InputCommentComponent,
+    FabButtonComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +70,8 @@ import { MatInputModule } from '@angular/material/input';
       apiKey: ''
     }),
     MatCarouselModule,
-    MatInputModule
+    MatInputModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
