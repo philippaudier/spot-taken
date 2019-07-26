@@ -1,4 +1,6 @@
-.card {
+@import './../../material-theme.scss';
+
+/*.card {
     display: flex;
     flex-direction: column;
     overflow: auto;
@@ -18,5 +20,40 @@
 .mat-card {
     border-radius: 0;
     height: 100%;
+} */
+
+
+.container {
+    color: mat-color($md-palette1, primary-text);
+    display: flex;
+    flex-direction: column;
+    margin: 16px 16px;
+    flex-grow: 1;
+
+    .wrap-content {
+        display: flex;
+        flex-wrap: wrap;
+        
+        li {
+            flex-grow: 1;
+        }
+    } 
 }
 
+#type {
+    margin: 0px 0px;
+    font-weight: 700;
+    color: mat-color($md-palette1, accent-color);
+}
+
+h1 {
+    margin: 0px;
+}
+
+.mat-list {
+    padding: 0;
+}
+
+p {
+    font-weight: 700;
+}

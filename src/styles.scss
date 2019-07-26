@@ -17,29 +17,28 @@
 }
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: 'Roboto', sans-serif; }
 
 .unavailable-date-cell {
     background: mat-color($spot-taken-warn);
 }
 
 .today-cell {
-    background: mat-color($spot-taken-primary);
+    background: mat-color($md-palette1, dark-primary);
 }
 
 .mat-calendar-header {
-    background-color: mat-color($spot-taken-primary);
-    color: #FFFFFF;
+    background-color: mat-color($md-palette1, dark-primary);
+    color: #ffffff;
     
 }
 
 .mat-calendar-arrow {
-    border-color: #FFFFFF;
+    border-color: mat-color($md-palette1, text-icons);
 }
 
 .mat-button-wrapper {
     font-size: 24px;
-    color: #FFFFFF;
+    color: #ffffff;
     opacity: 70%;
 }
-

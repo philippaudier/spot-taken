@@ -1,3 +1,5 @@
+@import './../../../material-theme.scss';
+
 .example-button-row button,
 .example-button-row a {
     top: auto !important;
@@ -10,4 +12,9 @@
 
 i {
     display: flex;
+    color: mat-color($md-palette1, text-icons);
+}
+
+.mat-accent {
+    background-color: mat-color($md-palette1, accent-color);
 }

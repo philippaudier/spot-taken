@@ -3,11 +3,17 @@
 @import '~@angular/material/theming';
 // Plus imports for other components in your app.
 
+@include mat-core(); 
+
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$spot-taken-primary: mat-palette($mat-blue);
-$spot-taken-accent: mat-palette($mat-indigo);
+$spot-taken-primary: mat-palette($mat-light-blue, 900);
+$spot-taken-accent: mat-palette($mat-amber, 500);
+
+// Black and White colors
+$spot-taken-black: mat-palette($mat-grey, 900);
+$spot-taken-white: mat-palette($mat-grey, 50);
 
 // The warn palette is optional (defaults to red).
 $spot-taken-warn: mat-palette($mat-red);
@@ -20,3 +26,18 @@ $spot-taken-theme: mat-light-theme($spot-taken-primary, $spot-taken-accent, $spo
         background-color: rgba(255, 255, 255, .4);
     }
 }
+
+/* For use in src/lib/core/theming/_palette.scss */
+$md-palette1: (
+    text-icons : #FFFFFF,
+    primary-color : #00BCD4,
+    light-primary : #B2EBF2,
+    dark-primary : #0097A7,
+    accent-color: #FFC107,
+    primary-text : #212121,
+    secondary-text : #757575,
+    divider-color : #BDBDBD,
+);
+
+
+
