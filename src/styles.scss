@@ -17,7 +17,7 @@
 }
 
 html, body { height: 100%; }
-body { margin: 0; font-family: 'Roboto', sans-serif; }
+body { margin: 0; font-family: 'Roboto', sans-serif; color: mat-color($md-palette1, primary-text);}
 
 .unavailable-date-cell {
     background: mat-color($spot-taken-warn);
