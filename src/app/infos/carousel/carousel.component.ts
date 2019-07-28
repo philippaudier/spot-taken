@@ -10,17 +10,17 @@ export class CarouselComponent {
   title = 'angularowlslider';
   customOptions: any = {
     loop: true,
-    mouseDrag: false,
-    touchDrag: false,
+    mouseDrag: true,
+    touchDrag: true,
     pullDrag: false,
     dots: false,
     navSpeed: 700,
-    navText: ['', ''],
+    navText: ['<', '>'],
     responsive: {
       0: {
         items: 1
       },
-      400: {
+      600: {
         items: 2
       },
       740: {
@@ -30,7 +30,7 @@ export class CarouselComponent {
         items: 4
       }
     },
-    nav: true
+    nav: true,
   };
 }
 
