@@ -35,7 +35,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { BookingCardComponent } from './reservation/booking-card/booking-card.component';
 
 // import the carousel module and the slider component
-
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { Routes, RouterModule } from '@angular/router';
+import { CarouselComponent } from './infos/carousel/carousel.component';
 
 
 
@@ -56,6 +58,7 @@ import { BookingCardComponent } from './reservation/booking-card/booking-card.co
     InputCommentComponent,
     FabButtonComponent,
     BookingCardComponent,
+    CarouselComponent,
 
   ],
   imports: [
@@ -79,7 +82,9 @@ import { BookingCardComponent } from './reservation/booking-card/booking-card.co
       apiKey: ''
     }),
     MatInputModule,
-    MatButtonModule
+    CarouselModule,
+    MatButtonModule,
+    RouterModule.forRoot([])
   ],
   providers: [],
   bootstrap: [AppComponent]
