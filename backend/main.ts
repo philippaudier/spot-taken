@@ -9,6 +9,32 @@ const connectionString = 'postgres://postgres:tiliChat1@localhost:5432/spot-take
 const port = process.env.PORT || 8081;
 let databaseClient;
 
+const http = require('http'); // importing http
+
+function startKeepAlive() {
+    setInterval( () => {
+        const options = {
+            host: 'spot-taken.herokuapp.com',
+            port: 80,
+            path: '/'
+        };
+        http.get(options, (res) => {
+            res.on('data', (chunk) => {
+                try {
+                    // optional logging... disable after it's working
+                    console.log("HEROKU RESPONSE: " + chunk);
+                } catch (err) {
+                    console.log(err.message);
+                }
+            });
+        }).on('error', (err) => {
+            console.log("Error: " + err.message);
+        });
+    }, 20 * 60 * 1000); // load every 20 minutes
+}
+
+startKeepAlive();
+
 async function init() {
     configureExpressApp();
     await connectToDb();
@@ -22,7 +48,6 @@ async function connectToDb() {
     });
     await databaseClient.connect();
     databaseClient.query('SELECT NOW()', (err, res) => {
-        
         databaseClient.end();
     });
 }
@@ -48,7 +73,7 @@ function exposeProductionAngularApp(app) {
 
     // For all GET requests, send back index.html
     // so that PathLocationStrategy can be used
-    //only for routes not matched by previous middlewares, so order is important
+    // only for routes not matched by previous middlewares, so order is important
     console.log(path.join(__dirname, "./../dist/spot-taken/index.html"));
     app.get("/*", (req, res) => {
         console.log('serving index.html');
