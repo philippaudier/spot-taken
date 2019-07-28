@@ -35,7 +35,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { BookingCardComponent } from './reservation/booking-card/booking-card.component';
 
 // import the carousel module and the slider component
-import { MatCarouselModule } from '@ngmodule/material-carousel';
+
+
 
 
 
@@ -77,7 +78,6 @@ import { MatCarouselModule } from '@ngmodule/material-carousel';
     AgmCoreModule.forRoot({
       apiKey: ''
     }),
-    MatCarouselModule,
     MatInputModule,
     MatButtonModule
   ],
