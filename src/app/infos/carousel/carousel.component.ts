@@ -13,7 +13,8 @@ export class CarouselComponent {
     mouseDrag: true,
     touchDrag: true,
     pullDrag: false,
-    dots: false,
+    dots: true,
+    dotsEach: true,
     navSpeed: 700,
     navText: ['<', '>'],
     responsive: {
@@ -30,7 +31,6 @@ export class CarouselComponent {
         items: 4
       }
     },
-    nav: true,
   };
 }
 
