@@ -37,8 +37,14 @@ body { margin: 0; font-family: 'Roboto', sans-serif; color: mat-color($md-palett
     border-color: mat-color($md-palette1, text-icons);
 }
 
-.mat-button-wrapper {
+.button {
+    border: 1px solid black;
+}
+
+/* .mat-button-wrapper {
     font-size: 24px;
     color: #ffffff;
     opacity: 70%;
-}
+    
+} */
+

@@ -27,11 +27,17 @@ import { MatDividerModule } from '@angular/material/divider';
 import { DividerComponent } from './divider/divider.component';
 import { AgmCoreModule } from '@agm/core';
 import { MapComponent } from './map/map.component';
-import { MatCarouselModule } from '@ngmodule/material-carousel';
+
 import { InputCommentComponent } from './component/input-comment/input-comment.component';
 import { MatInputModule } from '@angular/material/input';
 import { FabButtonComponent } from './component/fab-button/fab-button.component';
 import { MatButtonModule } from '@angular/material/button';
+import { BookingCardComponent } from './reservation/booking-card/booking-card.component';
+
+// import the carousel module and the slider component
+import { MatCarouselModule } from '@ngmodule/material-carousel';
+
+
 
 @NgModule({
   declarations: [
@@ -47,7 +53,9 @@ import { MatButtonModule } from '@angular/material/button';
     DividerComponent,
     MapComponent,
     InputCommentComponent,
-    FabButtonComponent
+    FabButtonComponent,
+    BookingCardComponent,
+
   ],
   imports: [
     BrowserModule,
