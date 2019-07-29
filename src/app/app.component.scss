@@ -1,4 +1,5 @@
 @import '../material-theme.scss';
+@import '~material-bottom-nav';
 
 :host {
     display: flex;
@@ -29,24 +30,40 @@
         a {
             display: flex;
             text-decoration: none;
-            opacity: 0.76;
             color: mat-color($md-palette1, text-icons);
             width: 100vh;
             flex-direction: column;
             height: 56px;
-            //border-bottom: 4px solid transparent;
-            
+            opacity: 0.76;
             i {
                 margin-top: 8px;
             }
-            &:focus {
-                opacity: 1;
-                //border-bottom: 4px solid #FFFFFF;  
+            .bottom-menu-label {
+                font-size: 14px;
+
             } 
+        &:focus {
+            opacity: 1;
+        }
+
         }
     }
 }
 
+/* bottom-nav-bar style */
+.bottom-nav {
+    @include bottom-nav($background-color: mat-color($md-palette1, primary-color), $active-color: #FFFFFF, $inactive-color: #E0E0E0);
+    position: sticky; 
+}
+
+.bottom-nav__action {
+    display: flex;
+    flex-direction: column;
+}
+
+
+    
+   
 
 
 

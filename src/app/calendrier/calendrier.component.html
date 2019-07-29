@@ -2,5 +2,8 @@
     <mat-calendar #calendar 
         (selectedChange)="onSelect($event)"
         [dateFilter]="dateFilter"
-        [dateClass]="dateClassFunction"></mat-calendar>
+        [dateClass]="dateClassFunction">
+    </mat-calendar>
+    <button mat-button class="button">MODIFIER</button>
+    <button mat-button class="button">ANNULER</button>
 </div>
