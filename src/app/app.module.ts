@@ -1,7 +1,16 @@
+// Angular modules
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatInputModule } from '@angular/material/input';
+
+// agm module
+import { AgmCoreModule } from '@agm/core';
+
+// components
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CalendrierComponent } from './calendrier/calendrier.component';
@@ -9,38 +18,36 @@ import { InventaireComponent } from './inventaire/inventaire.component';
 import { ReservationComponent } from './reservation/reservation.component';
 import { LivreComponent } from './livre/livre.component';
 import { InfosComponent } from './infos/infos.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DataTableComponent } from './data-table/data-table.component';
+import { ExpansionPanelComponent } from './expansion-panel/expansion-panel.component';
+import { ListInfoComponent } from './list-info/list-info.component';
+import { DividerComponent } from './divider/divider.component';
+import { MapComponent } from './map/map.component';
+import { InputCommentComponent } from './component/input-comment/input-comment.component';
+import { FabButtonComponent } from './component/fab-button/fab-button.component';
+import { BookingCardComponent } from './reservation/booking-card/booking-card.component';
+
+// svg icon module
+import { AngularSvgIconModule } from 'angular-svg-icon';
+
+// carousel module and the slider component
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { Routes, RouterModule } from '@angular/router';
+import { CarouselComponent } from './infos/carousel/carousel.component';
+
+// mat-module
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import { MatRippleModule } from '@angular/material/core';
 import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { DataTableComponent } from './data-table/data-table.component';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatCardModule } from '@angular/material/card';
 import { MatExpansionModule } from '@angular/material/expansion';
-import { ExpansionPanelComponent } from './expansion-panel/expansion-panel.component';
 import { MatListModule } from '@angular/material/list';
-import { ListInfoComponent } from './list-info/list-info.component';
 import { MatDividerModule } from '@angular/material/divider';
-import { DividerComponent } from './divider/divider.component';
-import { AgmCoreModule } from '@agm/core';
-import { MapComponent } from './map/map.component';
-
-import { InputCommentComponent } from './component/input-comment/input-comment.component';
-import { MatInputModule } from '@angular/material/input';
-import { FabButtonComponent } from './component/fab-button/fab-button.component';
 import { MatButtonModule } from '@angular/material/button';
-import { BookingCardComponent } from './reservation/booking-card/booking-card.component';
-
-// import the carousel module and the slider component
-import { CarouselModule } from 'ngx-owl-carousel-o';
-import { Routes, RouterModule } from '@angular/router';
-import { CarouselComponent } from './infos/carousel/carousel.component';
-
-
-
 
 @NgModule({
   declarations: [
@@ -74,6 +81,7 @@ import { CarouselComponent } from './infos/carousel/carousel.component';
     MatFormFieldModule,
     MatSortModule,
     MatPaginatorModule,
+    MatButtonModule,
     MatCardModule,
     MatExpansionModule,
     MatListModule,
@@ -83,8 +91,8 @@ import { CarouselComponent } from './infos/carousel/carousel.component';
     }),
     MatInputModule,
     CarouselModule,
-    MatButtonModule,
-    RouterModule.forRoot([])
+    RouterModule.forRoot([]),
+    AngularSvgIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
