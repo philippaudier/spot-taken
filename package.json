@@ -15,13 +15,14 @@
     "back-debug": "npm run back-compile && concurrently -k -n \"tsc,back\" -c \"magenta,green\" \"npm:back-compile-watch-only\" \"npm:back-debug-only\"",
     "back-debug-brk": "npm run back-compile && concurrently -k -n \"back-tsc,back\" -c \"magenta,green\" \"npm:back-compile-watch-only\" \"npm:back-debug-brk-only\"",
     "start": "npm run start-prod",
-    "postinstall": "npm run build-prod"
+    "postinstall": "npm run build-prod",
+    "test-db": "npm run backendDist/app.js"
   },
   "private": true,
   "dependencies": {
     "@agm/core": "^1.0.0-beta.7",
     "@angular/animations": "~8.0.0",
-    "@angular/cdk": "^8.0.2",
+    "@angular/cdk": "^8.1.2",
     "@angular/common": "~8.0.0",
     "@angular/compiler": "~8.0.0",
     "@angular/core": "~8.0.0",
@@ -32,6 +33,7 @@
     "@angular/platform-browser": "~8.0.0",
     "@angular/platform-browser-dynamic": "~8.0.0",
     "@angular/router": "~8.0.0",
+    "@ncstate/sat-popover": "^4.0.0",
     "@ngmodule/material-carousel": "^0.5.0",
     "angular-oauth2-oidc": "^8.0.1",
     "angular-svg-icon": "^7.2.1",
@@ -44,8 +46,12 @@
     "moment": "^2.24.0",
     "ng-image-slider": "^1.3.7",
     "ngx-owl-carousel-o": "^2.0.0",
-    "pg": "^7.11.0",
+    "pg": "^7.12.1",
+    "pg-hstore": "^2.3.3",
+    "reflect-metadata": "^0.1.13",
     "rxjs": "~6.4.0",
+    "sequelize": "^5.12.3",
+    "sequelize-typescript": "^1.0.0-beta.4",
     "source-map-support": "^0.5.12",
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1"
@@ -70,6 +76,7 @@
     "nodemon": "^1.18.11",
     "protractor": "~5.4.0",
     "rimraf": "^2.6.3",
+    "sequelize-cli": "^5.5.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
     "typescript": "~3.4.3"

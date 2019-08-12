@@ -48,6 +48,11 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatListModule } from '@angular/material/list';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
+import { SatPopoverModule } from '@ncstate/sat-popover';
+import { MatSelectModule } from '@angular/material/select';
+import { MatDialogModule } from '@angular/material/dialog';
+
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -66,7 +71,6 @@ import { MatButtonModule } from '@angular/material/button';
     FabButtonComponent,
     BookingCardComponent,
     CarouselComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -92,9 +96,14 @@ import { MatButtonModule } from '@angular/material/button';
     MatInputModule,
     CarouselModule,
     RouterModule.forRoot([]),
-    AngularSvgIconModule
+    AngularSvgIconModule,
+    SatPopoverModule,
+    MatSelectModule,
+    MatDialogModule,
+    FormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [],
 })
 export class AppModule { }

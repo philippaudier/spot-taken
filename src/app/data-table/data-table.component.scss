@@ -1,7 +1,29 @@
+@import './../../material-theme.scss';
+
 .data-table {
   width: 100%;
   overflow: auto;
 }
+
+.action-button {
+  padding: 0px 0px;
+  min-width: 40px;
+  height: 40px;
+  color: mat-color($md-palette1, accent-color);
+}
+
+.add-button {
+  color: mat-color($md-palette1, primary-color);
+  opacity: 1;
+}
+
+.cell {
+  width: 80px;
+  align-items: center;
+  position: relative;
+}
+
+
 
 
 
