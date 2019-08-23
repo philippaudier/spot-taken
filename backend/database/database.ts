@@ -37,9 +37,24 @@ export async function createDatabase() {
                 FK_user_id INT REFERENCES users (PK_user_id),
                 PRIMARY KEY (booking_id)
             );
+
+            INSERT INTO users (name)
+            VALUES
+            ('philou'),
+            ('mike');
+
+            INSERT INTO bookings (start_date, end_date, FK_user_id)
+            VALUES
+            ('2019-06-06', '2019-07-07', 1),
+            ('2019-02-06', '2019-07-07', 1),
+            ('2019-06-06', '2019-07-07', 2);
         `)
         console.log('database created')
     } catch (e) {
         console.error(e)
     }
+}
+
+export async function sqlQuery(query: string) {
+    return await databaseClient.query(query)
 }

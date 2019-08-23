@@ -9,7 +9,7 @@
     "back-compile": "rimraf backendDist && tsc -p backend/tsconfig.json",
     "back-compile-watch": "rimraf backendDist && npm run back-compile-watch-only",
     "back-compile-watch-only": "tsc -p tsconfig.json -w",
-    "back-debug-only": "./node_modules/.bin/nodemon --inspect backendDist/main.js",
+    "back-debug-only": "./node_modules/.bin/nodemon --inspect -L backendDist/main.js",
     "back-debug-brk-only": "./node_modules/.bin/nodemon --inspect-brk backendDist/main.js",
     "back-prod": "npm run back-compile && npm run start-prod",
     "back-debug": "npm run back-compile && concurrently -k -n \"tsc,back\" -c \"magenta,green\" \"npm:back-compile-watch-only\" \"npm:back-debug-only\"",

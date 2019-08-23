@@ -4,9 +4,10 @@ import { startKeepAlive } from "./keepAlive"
 import * as http from 'http'
 import * as express from "express"
 import * as sourceMapSupport from "source-map-support"
-import {corsMiddleware} from "./cors-middleware"
-import {exposeProductionAngularApp} from "./expose-angular-middleware"
+import {corsMiddleware} from "./middlewares/cors-middleware"
+import {exposeProductionAngularApp} from "./middlewares/expose-angular-middleware"
 import {connectToDb, createDatabase, deleteDatabase } from "./database/database"
+import {setUpWebAPIs} from './api/api'
 
 sourceMapSupport.install()// to get stack traces pointing to ts files
 
@@ -29,6 +30,7 @@ function configureExpressApp(app, port) {
     setUpGlobalMiddlewares(app)
     app.listen(port)
     console.log("listening on port " + port)
+    setUpWebAPIs(app)
     exposeProductionAngularApp(app)
 }
 
