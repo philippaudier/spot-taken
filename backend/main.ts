@@ -1,96 +1,38 @@
-import * as bodyParser from "body-parser";
-import * as compression from "compression";
-import * as express from "express";
-import * as path from "path";
-import { Pool, Client } from "pg";
+import * as bodyParser from "body-parser"
+import * as compression from "compression"
+import { startKeepAlive } from "./keepAlive"
+import * as http from 'http'
+import * as express from "express"
+import * as sourceMapSupport from "source-map-support"
+import {corsMiddleware} from "./cors-middleware"
+import {exposeProductionAngularApp} from "./expose-angular-middleware"
+import {connectToDb} from "./database/database"
 
+sourceMapSupport.install()// to get stack traces pointing to ts files
 
-require("source-map-support").install(); // to get stack traces pointing to ts files
-const connectionString = 'postgres://postgres:tiliChat1@localhost:5432/spot-taken';
-const port = process.env.PORT || 8081;
-let databaseClient;
-
-const http = require('http'); // importing http
-
-function startKeepAlive() {
-    setInterval( () => {
-        const options = {
-            host: 'spot-taken.herokuapp.com',
-            port: 80,
-            path: '/'
-        };
-        http.get(options, (res) => {
-            res.on('data', (chunk) => {
-                try {
-                    // optional logging... disable after it's working
-                    console.log("HEROKU RESPONSE: " + chunk);
-                } catch (err) {
-                    console.log(err.message);
-                }
-            });
-        }).on('error', (err) => {
-            console.log("Error: " + err.message);
-        });
-    }, 20 * 60 * 1000); // load every 20 minutes
-}
-
-startKeepAlive();
+init()
 
 async function init() {
-    configureExpressApp();
-    await connectToDb();
-    console.log("starting server");
-    console.log("--=== Server started ===--");
+    const app = express()
+    startKeepAlive(http)
+    const port = process.env.PORT || 8081
+
+    configureExpressApp(app, port)
+    await connectToDb()
+    console.log("starting server")
+    console.log("--=== Server started ===--")
 }
 
-async function connectToDb() {
-    databaseClient = new Client({
-        connectionString
-    });
-    await databaseClient.connect();
-    databaseClient.query('SELECT NOW()', (err, res) => {
-        databaseClient.end();
-    });
-}
-
-function configureExpressApp() {
-    const app = express();
-    setUpGlobalMiddlewares(app);
-    app.listen(port);
-    console.log("listening on port " + port);
-    exposeFakeAPI(app);
-    exposeProductionAngularApp(app);
+function configureExpressApp(app, port) {
+    setUpGlobalMiddlewares(app)
+    app.listen(port)
+    console.log("listening on port " + port)
+    exposeProductionAngularApp(app)
 }
 
 function setUpGlobalMiddlewares(app) {
-    app.use(compression());
-    app.use(bodyParser.json());
-    app.use(bodyParser.urlencoded({ extended: true }));
+    app.use(compression())
+    app.use(bodyParser.json())
+    app.use(bodyParser.urlencoded({ extended: true }))
+    app.use(corsMiddleware)
 }
-
-function exposeProductionAngularApp(app) {
-    console.log("dirname: " + __dirname);
-    app.use(express.static(__dirname + "./../dist/spot-taken"));
-
-    // For all GET requests, send back index.html
-    // so that PathLocationStrategy can be used
-    // only for routes not matched by previous middlewares, so order is important
-    console.log(path.join(__dirname, "./../dist/spot-taken/index.html"));
-    app.get("/*", (req, res) => {
-        console.log('serving index.html');
-        res.sendFile(path.join(__dirname, "./../dist/spot-taken/index.html"));
-    }
-    );
-}
-
-function exposeFakeAPI(app) {
-    app.get("/api/testwebservice", (req, res) => {
-        console.log('serving /api/testwebservice');
-        res.json({
-            message: 'bravo'
-        });
-    }
-    );
-}
-
-init();

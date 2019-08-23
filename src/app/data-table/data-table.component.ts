@@ -3,6 +3,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { SelectionModel } from '@angular/cdk/collections';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { AddDialogBoxComponent } from './add-dialog-box/add-dialog-box.component';
 
 
 export interface ListeInventaire {
@@ -71,6 +72,17 @@ export class DataTableComponent implements OnInit {
   addRow() {
     ELEMENT_DATA.push({id: 1, item: this.item, quantity: this.quantity, state: this.state});
     this.dataSource = new MatTableDataSource(ELEMENT_DATA);
+  }
+
+  openAddDialog(): void {
+    const dialogRef = this.dialog.open(AddDialogBoxComponent, {
+      width: '250px',
+      data: { item: this.item, quantity: this.quantity, state: this.state }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
   }
 
 }

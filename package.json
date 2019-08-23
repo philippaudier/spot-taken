@@ -15,8 +15,7 @@
     "back-debug": "npm run back-compile && concurrently -k -n \"tsc,back\" -c \"magenta,green\" \"npm:back-compile-watch-only\" \"npm:back-debug-only\"",
     "back-debug-brk": "npm run back-compile && concurrently -k -n \"back-tsc,back\" -c \"magenta,green\" \"npm:back-compile-watch-only\" \"npm:back-debug-brk-only\"",
     "start": "npm run start-prod",
-    "postinstall": "npm run build-prod",
-    "test-db": "npm run backendDist/app.js"
+    "postinstall": "npm run build-prod"
   },
   "private": true,
   "dependencies": {
@@ -40,12 +39,15 @@
     "body-parser": "^1.18.3",
     "compression": "1.7.1",
     "express": "^4.16.3",
+    "express-handlebars": "^3.1.0",
     "googleapis": "^39.2.0",
     "material-bottom-nav": "^1.0.6",
     "materialize-css": "^1.0.0",
     "moment": "^2.24.0",
+    "morgan": "^1.9.1",
     "ng-image-slider": "^1.3.7",
     "ngx-owl-carousel-o": "^2.0.0",
+    "passport": "^0.4.0",
     "pg": "^7.12.1",
     "pg-hstore": "^2.3.3",
     "reflect-metadata": "^0.1.13",
