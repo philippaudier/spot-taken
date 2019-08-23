@@ -6,7 +6,7 @@ import * as express from "express"
 import * as sourceMapSupport from "source-map-support"
 import {corsMiddleware} from "./cors-middleware"
 import {exposeProductionAngularApp} from "./expose-angular-middleware"
-import {connectToDb} from "./database/database"
+import {connectToDb, createDatabase, deleteDatabase } from "./database/database"
 
 sourceMapSupport.install()// to get stack traces pointing to ts files
 
@@ -19,6 +19,8 @@ async function init() {
 
     configureExpressApp(app, port)
     await connectToDb()
+    await deleteDatabase()
+    await createDatabase()
     console.log("starting server")
     console.log("--=== Server started ===--")
 }
