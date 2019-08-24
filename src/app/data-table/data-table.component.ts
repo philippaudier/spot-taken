@@ -1,9 +1,8 @@
-import { Component, OnInit, ViewChild, Inject } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { SelectionModel } from '@angular/cdk/collections';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { AddDialogBoxComponent } from './add-dialog-box/add-dialog-box.component';
+import { MatDialog } from '@angular/material';
 
 
 export interface ListeInventaire {
@@ -18,7 +17,7 @@ const ELEMENT_DATA: ListeInventaire[] = [
   {id: 2, item: 'Bol',  quantity: 2, state: 'Bon'},
   {id: 3, item: 'Cuillère',  quantity: 6, state: 'Neuf'},
   {id: 4, item: 'Fourchette',  quantity: 6, state: 'Bon'},
-  /* {id: 5, item: 'Couteau',  quantity: 6, state: 'Bon'},
+  {id: 5, item: 'Couteau',  quantity: 6, state: 'Bon'},
   {id: 6, item: 'Cuillère à soupe',  quantity: 3, state: 'Usé'},
   {id: 7, item: 'Verre',  quantity: 8, state: 'Bon'},
   {id: 8, item: 'Assiette',  quantity: 6, state: 'Bon'},
@@ -33,7 +32,7 @@ const ELEMENT_DATA: ListeInventaire[] = [
   {id: 17, item: 'Lampe de bureau',  quantity: 2, state: 'Usé'},
   {id: 18, item: 'Machine à laver',  quantity: 1, state: 'Bon'},
   {id: 19, item: 'Sèche cheveux',  quantity: 1, state: 'Bon'},
-  {id: 20, item: 'Carafe',  quantity: 1, state: 'Neuf'}, */
+  {id: 20, item: 'Carafe',  quantity: 1, state: 'Neuf'},
 ];
 
 /**
@@ -60,29 +59,6 @@ export class DataTableComponent implements OnInit {
 
   ngOnInit() {
     this.dataSource.sort = this.sort;
-  }
-
-  deleteRow(row) {
-    const index = this.data.findIndex(obj => obj === row);
-    this.data.splice(index, 1);
-    this.dataSource = new MatTableDataSource(this.dataSource.data);
-    this.dataSource.sort = this.sort;
-  }
-
-  addRow() {
-    ELEMENT_DATA.push({id: 1, item: this.item, quantity: this.quantity, state: this.state});
-    this.dataSource = new MatTableDataSource(ELEMENT_DATA);
-  }
-
-  openAddDialog(): void {
-    const dialogRef = this.dialog.open(AddDialogBoxComponent, {
-      width: '250px',
-      data: { item: this.item, quantity: this.quantity, state: this.state }
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-    });
   }
 
 }

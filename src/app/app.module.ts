@@ -53,9 +53,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
 
 import { FormsModule } from '@angular/forms';
-import { AddDialogBoxComponent } from './data-table/add-dialog-box/add-dialog-box.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { SnackBarComponent } from './data-table/add-dialog-box/snack-bar/snack-bar.component';
 
 @NgModule({
   declarations: [
@@ -74,8 +72,6 @@ import { SnackBarComponent } from './data-table/add-dialog-box/snack-bar/snack-b
     FabButtonComponent,
     BookingCardComponent,
     CarouselComponent,
-    AddDialogBoxComponent,
-    SnackBarComponent,
   ],
   imports: [
     BrowserModule,
@@ -106,10 +102,9 @@ import { SnackBarComponent } from './data-table/add-dialog-box/snack-bar/snack-b
     MatSelectModule,
     MatDialogModule,
     FormsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [AddDialogBoxComponent],
 })
 export class AppModule { }
