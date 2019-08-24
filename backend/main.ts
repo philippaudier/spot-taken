@@ -22,14 +22,14 @@ async function init() {
     await connectToDb()
     await deleteDatabase()
     await createDatabase()
-    console.log("starting server")
+    console.log("> Starting server...")
     console.log("--=== Server started ===--")
 }
 
 function configureExpressApp(app, port) {
     setUpGlobalMiddlewares(app)
     app.listen(port)
-    console.log("listening on port " + port)
+    console.log("> Listening on port " + port)
     setUpWebAPIs(app)
     exposeProductionAngularApp(app)
 }
