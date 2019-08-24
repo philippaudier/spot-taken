@@ -36,7 +36,7 @@ function configureExpressApp(app, port) {
 
 function setUpGlobalMiddlewares(app) {
     app.use(compression())
+    app.use(corsMiddleware)
     app.use(bodyParser.json())
     app.use(bodyParser.urlencoded({ extended: true }))
-    app.use(corsMiddleware)
 }
