@@ -13,19 +13,15 @@ import { AgmCoreModule } from '@agm/core';
 // components
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CalendrierComponent } from './calendrier/calendrier.component';
-import { InventaireComponent } from './inventaire/inventaire.component';
-import { ReservationComponent } from './reservation/reservation.component';
-import { LivreComponent } from './livre/livre.component';
+import { CalendrierComponent } from './calendar/calendrier.component';
+import { ReservationComponent } from './bookings/reservation.component';
+import { LivreComponent } from './golden-book/livre.component';
 import { InfosComponent } from './infos/infos.component';
-import { DataTableComponent } from './data-table/data-table.component';
-import { ExpansionPanelComponent } from './expansion-panel/expansion-panel.component';
-import { ListInfoComponent } from './list-info/list-info.component';
-import { DividerComponent } from './divider/divider.component';
-import { MapComponent } from './map/map.component';
-import { InputCommentComponent } from './component/input-comment/input-comment.component';
-import { FabButtonComponent } from './component/fab-button/fab-button.component';
-import { BookingCardComponent } from './reservation/booking-card/booking-card.component';
+import { DataTableComponent } from './inventory/data-table.component';
+import { DividerComponent } from './components/divider/divider.component';
+import { InputCommentComponent } from './components/input-comment/input-comment.component';
+import { FabButtonComponent } from './components/fab-button/fab-button.component';
+import { BookingCardComponent } from './bookings/booking-card/booking-card.component';
 
 // svg icon module
 import { AngularSvgIconModule } from 'angular-svg-icon';
@@ -59,15 +55,11 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
   declarations: [
     AppComponent,
     CalendrierComponent,
-    InventaireComponent,
     ReservationComponent,
     LivreComponent,
     InfosComponent,
     DataTableComponent,
-    ExpansionPanelComponent,
-    ListInfoComponent,
     DividerComponent,
-    MapComponent,
     InputCommentComponent,
     FabButtonComponent,
     BookingCardComponent,
