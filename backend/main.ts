@@ -22,21 +22,21 @@ async function init() {
     await connectToDb()
     await deleteDatabase()
     await createDatabase()
-    console.log("> Starting server...")
+    console.log("starting server")
     console.log("--=== Server started ===--")
 }
 
 function configureExpressApp(app, port) {
     setUpGlobalMiddlewares(app)
     app.listen(port)
-    console.log("> Listening on port " + port)
+    console.log("listening on port " + port)
     setUpWebAPIs(app)
     exposeProductionAngularApp(app)
 }
 
 function setUpGlobalMiddlewares(app) {
     app.use(compression())
-    app.use(corsMiddleware)
     app.use(bodyParser.json())
     app.use(bodyParser.urlencoded({ extended: true }))
+    app.use(corsMiddleware)
 }
