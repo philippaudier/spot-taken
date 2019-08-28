@@ -34,4 +34,29 @@ export function setUpPostBooking(app) {
         }
 
     })
-} 
+}
+
+export function setUpDeleteBooking(app) {
+    app.delete('/api/users/:userid/bookings/delete/:bookingid', async (req, res) => {
+        console.log(req.params.bookingid)
+        try {
+            let bookingsResult = await sqlQuery(`
+            SELECT * FROM bookings
+            WHERE FK_user_id = ${req.params.userid};
+
+            DELETE FROM bookings
+            WHERE PK_booking_id = ${req.params.bookingid}
+
+            `)
+            res.status(201).json({
+                msg: 'deleted'
+            })
+        } catch (e) {
+            console.error(e)
+            res.status(500).json({
+                msg: 'error'
+            })
+        }
+
+    })
+}

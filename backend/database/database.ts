@@ -1,4 +1,4 @@
-import * as path from "path"
+
 import { Client } from "pg"
 
 let databaseClient
@@ -14,6 +14,7 @@ export async function deleteDatabase() {
         let result = await databaseClient.query(`
         DROP TABLE IF EXISTS bookings;
         DROP TABLE IF EXISTS users;
+        DROP TABLE IF EXISTS inventory;
         `)
         console.log('database dropped')
     } catch (e) {
@@ -31,11 +32,18 @@ export async function createDatabase() {
             );   
         
             CREATE TABLE bookings (
-                booking_id bigserial,
+                PK_booking_id bigserial,
                 start_date DATE,
                 end_date DATE,
                 FK_user_id INT REFERENCES users (PK_user_id),
-                PRIMARY KEY (booking_id)
+                PRIMARY KEY (PK_booking_id)
+            );
+
+            CREATE TABLE inventory (
+                item_id bigserial,
+                name VARCHAR(100),
+                quantity SMALLINT,
+                state VARCHAR(100)
             );
 
             INSERT INTO users (name)
@@ -48,6 +56,14 @@ export async function createDatabase() {
             ('2019-06-06', '2019-07-07', 1),
             ('2019-02-06', '2019-07-07', 1),
             ('2019-06-06', '2019-07-07', 2);
+
+            INSERT INTO inventory (name, quantity, state)
+            VALUES
+            ('Chaise', '4', 'Neuf'),
+            ('Cuillère', '6', 'Bon'),
+            ('Saladier', '1', 'Usé');
+
+
         `)
         console.log('database created')
     } catch (e) {

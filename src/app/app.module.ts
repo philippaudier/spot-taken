@@ -23,6 +23,8 @@ import { InputCommentComponent } from './components/input-comment/input-comment.
 import { FabButtonComponent } from './components/fab-button/fab-button.component';
 import { BookingCardComponent } from './bookings/booking-card/booking-card.component';
 
+//services
+
 // svg icon module
 import { AngularSvgIconModule } from 'angular-svg-icon';
 
@@ -47,9 +49,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { SatPopoverModule } from '@ncstate/sat-popover';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatMenuModule } from '@angular/material/menu';
 
 import { FormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+
+import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -95,6 +100,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatDialogModule,
     FormsModule,
     MatSnackBarModule,
+    MatMenuModule,
+    MatTabsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -48,13 +48,13 @@ export class CalendrierComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
-    this.httpClient.get('/api/testwebservice')
-      .toPromise()
-      .then((result) => {
-        console.log(result);
-      }, (error) => {
-        console.error(error);
-      });
+  this.httpClient.get('/api/testwebservice')
+    .toPromise()
+    .then((result) => {
+  console.log(result);
+    }, (error) => {
+  console.error(error);
+    });
   }
 
   onSelect(selectedDate: Moment) {
