@@ -29,7 +29,7 @@ export function setUpPostBooking(app) {
         } catch (e) {
             console.error(e)
             res.status(500).json({
-                msg: 'Bookings saved'
+                msg: 'booking saved'
             })
         }
 
@@ -49,7 +49,7 @@ export function setUpDeleteBooking(app) {
 
             `)
             res.status(201).json({
-                msg: 'deleted'
+                msg: 'booking deleted'
             })
         } catch (e) {
             console.error(e)

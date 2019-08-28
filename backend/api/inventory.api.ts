@@ -23,7 +23,7 @@ export function setUpPostInventory(app) {
             `)
             
             res.status(201).json({
-                msg: 'created'
+                msg: 'item created'
             })
         } catch (e) {
             console.error(e)
@@ -49,7 +49,7 @@ export function setUpUpdateInventory(app) {
                 WHERE item_id = ${req.params.itemid};
             `)
             res.status(201).json({
-                msg: 'updated'
+                msg: 'inventory updated'
             })
         } catch (e) {
             console.error(e)
@@ -74,7 +74,7 @@ export function setUpDeleteInventory(app) {
             `)
 
             res.status(201).json({
-                msg: 'deleted'
+                msg: 'item deleted from inventory'
             })
         } catch (e) {
             console.error(e)
